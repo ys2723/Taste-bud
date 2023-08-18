@@ -1,3 +1,6 @@
+# TechBud 
+A website which recommends movies, shows, music as well as anime according to a person's taste. 
+
 Project made as a part of Quantathon 1.0 Hackathon. 
 
 <div align="center"><h2><strong>Contributors</strong></h2></div>
