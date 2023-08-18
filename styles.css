@@ -41,7 +41,6 @@ aside{
 }
 
 header{
-    background-color: var(--element-bg);
     border-radius: 0px 0px 20px 20px;
     display: flex;
     flex-direction: row;
@@ -125,6 +124,7 @@ header{
     width: 100%;
     height: 100%;
     object-fit: fill;
+    filter: brightness()
     /* Use object-fit: cover; if you want to maintain the aspect ratio */
 }
 
@@ -139,7 +139,7 @@ header{
     justify-content: center;
     align-items: flex-end;
     width: 100%;
-    bottom: 10px; /* Adjust as needed */
+    bottom: 10px; 
     z-index: 2; /* Higher z-index to be above images */
 }
 
@@ -156,6 +156,51 @@ header{
 
 .carousel-indicator.active {
     background-color: var(--purple-accent);
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: opacity 0.3s ease-in-out;
+    padding: 30px;
+}
+
+
+.movie-name{
+    font-size: 3rem;
+    max-width: 60ch;
+    font-weight: bold;
+}
+
+.movie-rating{
+    font-size: 1.3rem;
+    max-width: 60ch;
+}
+
+.movie-desc{
+    font-size: 1.1rem;
+    max-width: 60ch;
+    overflow: hidden;
+}
+
+.imdb{
+    height: 1.9rem;
+    width: 1.9rem;
+}
+
+.rating-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /*right bar*/

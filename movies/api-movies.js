@@ -152,10 +152,20 @@ function fetchMoviesWithParams(year, rating, genre) {
     .then(data => {
       const movies = data.results;
       console.log(movies);
-      image1.src = IMG_URL+ movies[1].backdrop_path;
-      image2.src = IMG_URL+ movies[2].backdrop_path;
-      image3.src = IMG_URL+ movies[3].backdrop_path;
-      image4.src = IMG_URL+ movies[4].backdrop_path;
+
+      for(let i = 1; i<6 ;i++){
+        let img = document.querySelector('.image-'+i);
+        img.src = IMG_URL+ movies[i].backdrop_path;
+
+        let name = document.querySelector('.name-'+i);
+        name.innerHTML = movies[i].title;
+
+        let rating = document.querySelector('.rating-'+i);
+        rating.innerHTML = movies[i].vote_average;
+
+        let desc = document.querySelector('.desc-'+i);
+        desc.innerHTML = movies[i].overview;
+      }
       
     })
     .catch(error => console.error('Error fetching data:', error));
@@ -198,11 +208,20 @@ function recommendMoviesByGenre(genreId) {
   fetch(recommendURL)
     .then(response => response.json())
     .then(data => {
-      const recommendedMovies = data.results;
-      image1.src = IMG_URL+ recommendedMovies[0].backdrop_path;
-      image2.src = IMG_URL+ recommendedMovies[1].backdrop_path;
-      image3.src = IMG_URL+ recommendedMovies[2].backdrop_path;
-      image4.src = IMG_URL+ recommendedMovies[3].backdrop_path;
+      const movies = data.results;
+      for(let i = 1; i<6 ;i++){
+        let img = document.querySelector('.image-'+i);
+        img.src = IMG_URL+ movies[i].backdrop_path;
+
+        let name = document.querySelector('.name-'+i);
+        name.innerHTML = movies[i].title;
+
+        let rating = document.querySelector('.rating-'+i);
+        rating.innerHTML = movies[i].vote_average;
+
+        let desc = document.querySelector('.desc-'+i);
+        desc.innerHTML = movies[i].overview;
+      }
     })
     .catch(error => console.error('Error recommending movies:', error));
 }
