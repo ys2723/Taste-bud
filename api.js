@@ -1,3 +1,5 @@
+// import { sortMovies } from './sortMovies';
+
 const API_KEY = 'api_key=774c45332d4ea2aafdb9848019af87e5';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
@@ -107,6 +109,61 @@ fetch(API_URL)
         popularMoviesSection.appendChild(card);
       }
 
+    const releaseYearFilter = document.getElementById('release-year-filter');
+
+    // Add event listener to the filter
+    releaseYearFilter.addEventListener('change', () => {
+      const selectedYear = releaseYearFilter.value;
+
+      // Filter movies based on the selected year
+      const filteredMovies = movies.filter(movie => {
+        if (selectedYear === "") {
+          return true; // Show all movies when no year is selected
+        } else {
+          return new Date(movie.release_date).getFullYear() === parseInt(selectedYear);
+        }
+      });
+
+      // Clear the popularMoviesSection
+      popularMoviesSection.innerHTML = "";
+
+      // Display filtered movies
+      for (let i = 0; i < width; i++) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        const movieImage = document.createElement('img');
+        movieImage.src = IMG_URL + filteredMovies[i].poster_path;
+        movieImage.alt = filteredMovies[i].title + ' Poster';
+        card.appendChild(movieImage);
+
+        popularMoviesSection.appendChild(card);
+      }
+    });
+
+    const filteredMovies = movies.filter(movie => {
+      if (selectedGenre === "") {
+        return true; // Show all movies when no genre is selected
+      } else {
+        return movie.genre_ids.includes(parseInt(selectedGenre));
+      }
+    });
+
+    // Clear the popularMoviesSection
+    popularMoviesSection.innerHTML = "";
+
+    // Display filtered movies
+    for (let i = 0; i < width; i++) {
+      const card = document.createElement('div');
+      card.classList.add('card');
+
+      const movieImage = document.createElement('img');
+      movieImage.src = IMG_URL + filteredMovies[i].poster_path;
+      movieImage.alt = filteredMovies[i].title + ' Poster';
+      card.appendChild(movieImage);
+
+      popularMoviesSection.appendChild(card);
+    }
 
   })
   .catch(error => console.error('Error fetching data:', error));
