@@ -304,3 +304,8 @@ input:focus::placeholder {
     left: 0;
     transform: translate(32%, -65%);
     }
+
+.icon{
+    height: 40px;
+    width: 40px;
+}    

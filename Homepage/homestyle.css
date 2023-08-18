@@ -7,37 +7,42 @@
 }
 
 body {
-    background-color: #161617;
-    background-image: url("../images/back_image.png");
     padding-top: 0px;
     margin-top: 0px;
     font-family: 'Poppins', sans-serif;
+}
+
+.image{
+    height: 100vh;
+    background-color: #161617;
+    background-image: url("../images/back_image.png");
     background-position: center;
     background-repeat: no-repeat;
     background-position: 0 1;
-    animation: moveBackground 30s ease-in-out infinite;
+    animation: moveBackground 30s ease-in infinite;
 }
 
 @keyframes moveBackground {
     0% {
-        background-position: 0% 0%;
+        background-position: 28% 27%;
     }
     25% {
-        background-position: 25% 25%;
+        background-position: 50% 50%;
     }
     50% {
-        background-position: 50% 50%; 
+        background-position: 75% 75%; 
     }
     75% {
         background-position: 75% 75%; 
     }
     100% {
-        background-position: 0% 0%; 
+        background-position: 100% 100%; 
     }
 }
 
 
 .text-taste-bud{
+    filter: unset;
     display: inline;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 140px;
@@ -45,7 +50,7 @@ body {
     margin: 0;
     margin-top: 0px;
     text-align: center;
-    font-weight: 300;
+    font-weight: 800;
 }
 
 .first-text{
@@ -61,7 +66,9 @@ body {
 }
 
 .text-bud{
-    color: #9747FF;
+    background: -webkit-linear-gradient(290deg,#B04EDF, #6C22CC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .text-tagline{
