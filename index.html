@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ... (Your meta tags and title) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TasteBud</title>
@@ -11,7 +10,31 @@
     <div class="grid">
         <aside></aside>
         <header></header>
-        <main class="display-section">
+
+        <main class="display-section carousel" data-carousel>
+
+            <ul data-slides>
+              <li class="slide" data-active data-index="0">
+                <img src="https://source.unsplash.com/78A265wPiO4" alt="Nature Image #1">
+              </li>
+              <li class="slide" data-index="1">
+                <img src="https://source.unsplash.com/eOpewngf68w" alt="Nature Image #2">
+              </li>
+              <li class="slide" data-index="2">
+                <img src="https://source.unsplash.com/ndN00KmbJ1c" alt="Nature Image #3">
+              </li>
+              <li class="slide" data-index="3">
+                <img src="https://unsplash.com/photos/_RBcxo9AU-U" alt="Nature Image #4">
+              </li>
+            </ul>
+
+            <div class="carousel-indicators">
+                <button class="carousel-indicator active" data-slide-index="0"></button>
+                <button class="carousel-indicator" data-slide-index="1"></button>
+                <button class="carousel-indicator" data-slide-index="2"></button>
+                <button class="carousel-indicator" data-slide-index="3"></button>
+            </div>
+
         </main>
 
         <main class="cards-section">
@@ -29,5 +52,6 @@
     </div>
 
     <script src="api.js"></script>
+    <script src="carousel.js"></script>
 </body>
 </html>
