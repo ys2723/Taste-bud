@@ -148,26 +148,6 @@ function highlightSelection() {
 
 }
 
-function clearBtn(){
-    let clearBtn = document.getElementById('clear');
-    if(clearBtn){
-        clearBtn.classList.add('highlight')
-    }else{
-            
-        let clear = document.createElement('div');
-        clear.classList.add('tag','highlight');
-        clear.id = 'clear';
-        clear.innerText = 'Clear x';
-        clear.addEventListener('click', () => {
-            selectedGenre = [];
-            setGenre();            
-            getMovies(API_URL);
-        })
-        tagsEl.append(clear);
-    }
-    
-}
-
 getMovies(API_URL);
 
 function getMovies(url) {
@@ -206,27 +186,27 @@ function getMovies(url) {
 
 
 function showMovies(data) {
-    const popularMovies = document.getElementById('popular-movies');
-    popularMovies.innerHTML = '';
+  const popularMovies = document.getElementById('popular-movies');
+  popularMovies.innerHTML = '';
 
-    data.forEach(movie => {
-        const { title, poster_path, vote_average } = movie;
-        const movieEl = document.createElement('div');
-        movieEl.classList.add('card');
-        movieEl.innerHTML = `
-            <img src="${poster_path ? IMG_URL + poster_path : 'http://via.placeholder.com/300x450'}" alt="${title}">
-            <div class="card-info">
-                <h3>${title}</h3>
-                <span class="${getColor(vote_average)}">${vote_average}</span>
-            </div>
-        `;
+  data.forEach(movie => {
+      const { title, poster_path, vote_average } = movie;
+      const movieEl = document.createElement('div');
+      movieEl.classList.add('card');
+      movieEl.innerHTML = `
+          <img src="${poster_path ? IMG_URL + poster_path : 'http://via.placeholder.com/300x450'}" alt="${title}">
+          <div class="card-info">
+              <h3>${title}</h3>
+              <span class="${getColor(vote_average)}">${vote_average}</span>
+          </div>
+      `;
 
-        popularMovies.appendChild(movieEl);
+      popularMovies.appendChild(movieEl);
 
-        movieEl.addEventListener('click', () => {
-            openNav(movie);
-        });
-    });
+      movieEl.addEventListener('click', () => {
+          openNav(movie);
+      });
+  });
 }
 
 const overlayContent = document.getElementById('overlay-content');
@@ -276,113 +256,5 @@ function openNav(movie) {
   })
 }
 
-/* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
-}
-
-var activeSlide = 0;
-var totalVideos = 0;
-
-function showVideos(){
-  let embedClasses = document.querySelectorAll('.embed');
-  let dots = document.querySelectorAll('.dot');
-
-  totalVideos = embedClasses.length; 
-  embedClasses.forEach((embedTag, idx) => {
-    if(activeSlide == idx){
-      embedTag.classList.add('show')
-      embedTag.classList.remove('hide')
-
-    }else{
-      embedTag.classList.add('hide');
-      embedTag.classList.remove('show')
-    }
-  })
-
-  dots.forEach((dot, indx) => {
-    if(activeSlide == indx){
-      dot.classList.add('active');
-    }else{
-      dot.classList.remove('active')
-    }
-  })
-}
-
-const leftArrow = document.getElementById('left-arrow')
-const rightArrow = document.getElementById('right-arrow')
-
-leftArrow.addEventListener('click', () => {
-  if(activeSlide > 0){
-    activeSlide--;
-  }else{
-    activeSlide = totalVideos -1;
-  }
-
-  showVideos()
-})
-
-rightArrow.addEventListener('click', () => {
-  if(activeSlide < (totalVideos -1)){
-    activeSlide++;
-  }else{
-    activeSlide = 0;
-  }
-  showVideos()
-})
-
-
-function getColor(vote) {
-    if(vote>= 8){
-        return 'green'
-    }else if(vote >= 5){
-        return "orange"
-    }else{
-        return 'red'
-    }
-}
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const searchTerm = search.value;
-    selectedGenre=[];
-    setGenre();
-    if(searchTerm) {
-        getMovies(searchURL+'&query='+searchTerm)
-    }else{
-        getMovies(API_URL);
-    }
-
-})
-
-prev.addEventListener('click', () => {
-  if(prevPage > 0){
-    pageCall(prevPage);
-  }
-})
-
-next.addEventListener('click', () => {
-  if(nextPage <= totalPages){
-    pageCall(nextPage);
-  }
-})
-
-function pageCall(page){
-  let urlSplit = lastUrl.split('?');
-  let queryParams = urlSplit[1].split('&');
-  let key = queryParams[queryParams.length -1].split('=');
-  if(key[0] != 'page'){
-    let url = lastUrl + '&page='+page
-    getMovies(url);
-  }else{
-    key[1] = page.toString();
-    let a = key.join('=');
-    queryParams[queryParams.length -1] = a;
-    let b = queryParams.join('&');
-    let url = urlSplit[0] +'?'+ b
-    getMovies(url);
-  }
-}
 
   
