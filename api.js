@@ -86,7 +86,8 @@ const genres = [
 const popularMoviesSection = document.getElementById('popular-movies');
 let width = popularMoviesSection.getBoundingClientRect().width;
 width = width/320;
-width = Number(width);
+width = Math.floor(width);
+console.log(width);
 
 // Fetch data from the API
 fetch(API_URL)
@@ -94,18 +95,17 @@ fetch(API_URL)
   .then(data => {
     const movies = data.results;
 
+      for(let i=0;i<width;i++){
+        const card = document.createElement('div');
+        card.classList.add('card');
 
-    for(let i=0;i<width;i++){
-      const card = document.createElement('div');
-      card.classList.add('card');
+        const movieImage = document.createElement('img');
+        movieImage.src =IMG_URL+ movies[i].poster_path;
+        movieImage.alt = movies[i].title + ' Poster';
+        card.appendChild(movieImage);
 
-      const movieImage = document.createElement('img');
-      movieImage.src =IMG_URL+ movies[i].poster_path;
-      movieImage.alt = movies[i].title + ' Poster';
-      card.appendChild(movieImage);
-
-      popularMoviesSection.appendChild(card);
-    }
+        popularMoviesSection.appendChild(card);
+      }
 
 
   })
