@@ -9,7 +9,7 @@
 
 :root{
     --element-bg: #000000;
-    --main-bg: #161617;
+    --main-bg: #0d0d0d;
     --purple-accent: #9747FF
 }
 
@@ -33,7 +33,6 @@ body{
 
 aside{
     grid-area: 1 / 1 / 4 / 2;
-    background-color: var(--element-bg);
     border-radius: 0px 20px 20px 0px;
     display: flex;
     flex-direction: column;
@@ -179,7 +178,6 @@ input {
 input::placeholder {
     display: flex;
     align-items: center;
-    transform: translateY(-15%);
   }
 
 input:focus::placeholder {
@@ -223,7 +221,11 @@ input:focus::placeholder {
     font-size: 16px;
     text-transform: capitalize;
     padding-left: 10px;
+    font-weight: 550;
   }
+ 
+
+  /*filter bar*/  
 
 .b-1{
     color: white;
@@ -247,10 +249,10 @@ input:focus::placeholder {
     appearance: none;
 }
 
-.genre-box:hover, .rating-box:hover, .submit:hover {
+.genre-box:hover, .rating-box:hover {
     background-color: #292929;
+    color: #9747FF;
     appearance: none;
-    cursor: pointer;
 }
 
   /* Year */
@@ -264,36 +266,19 @@ input:focus::placeholder {
     outline: 0;
     cursor: pointer;
     padding: 10px;
-    font-weight: bold;
+}
+
+.year-bar:hover {
+    background-color: #292929;
+    color: #9747FF;
 }
 
 .year-bar::placeholder {
     color: white;
     font-size: 13px;
+    font-weight: 550;
     text-transform: capitalize;
 }
-
-/* Drop Down Arrow*/
-
-/* .select-arrow {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-top: 4px solid #161617;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-    cursor: pointer;        
-}
-
-.select-arrow.open {
-    width: 8px;
-    height: 8px;
-    border-top-color: #9747FF;
-} */
-
 /*nav bar*/
 
 .nav{
@@ -312,7 +297,6 @@ input:focus::placeholder {
     width: 40px;
 }    
 
-
 .submit{
     width: 115px;
     height: 40px;
@@ -326,14 +310,13 @@ input:focus::placeholder {
 }
 
 
-.submit{
-    width: 115px;
-    height: 40px;
-    background-color: #161617;
-    outline: none;
-    border: none;
-    color: white;
-    border-radius: 16px;
-    font-size: 14px;
-    font-weight: bold;
+.submit:hover{
+    background-color: #292929;
+    cursor: pointer;
+    color: #9747FF;
+}
+
+.hover{
+    position: 
+    z-index: 2;
 }
