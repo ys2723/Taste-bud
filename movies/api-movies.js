@@ -132,16 +132,6 @@ submitButton.addEventListener('click', () => {
 });
 
 
-//Fetching the input for a search
-const searchInput = document.querySelector('.search-bar');
-searchInput.addEventListener("keydown", event => {
-    if (event.key === "Enter") {
-        const searchInput = yearInput.value;
-        //Call function
-    }
-});
-
-
 function fetchMoviesWithParams(year, rating, genre) {
   let url = API_URL;
 
@@ -172,12 +162,56 @@ function fetchMoviesWithParams(year, rating, genre) {
 }
 
 
+//Fetching the input for a search
+const searchInput = document.querySelector('.search-bar');
+searchInput.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        const movieName = searchInput.value;
+        searchMovies(movieName);
+        searchInput.value = "";
+    }
+});
 
-// Fetch data from the API
+
+function searchMovies(movieName) {
+  const searchURL = `${BASE_URL}/search/movie?${API_KEY}&query=${encodeURIComponent(movieName)}`;
+  
+  fetch(searchURL)
+    .then(response => response.json())
+    .then(data => {
+      const movies = data.results;
+      if (movies.length > 0) {
+        const firstMovie = movies[0];
+        const genreId = firstMovie.genre_ids[0];
+        recommendMoviesByGenre(genreId);
+      } else {
+        alert('No movies found with that name.');
+      }
+    })
+    .catch(error => console.error('Error searching movies:', error));
+}
+
+
+function recommendMoviesByGenre(genreId) {
+  const recommendURL = `${BASE_URL}/discover/movie?${API_KEY}&with_genres=${genreId}&sort_by=popularity.desc`;
+
+  fetch(recommendURL)
+    .then(response => response.json())
+    .then(data => {
+      const recommendedMovies = data.results;
+      image1.src = IMG_URL+ recommendedMovies[0].backdrop_path;
+      image2.src = IMG_URL+ recommendedMovies[1].backdrop_path;
+      image3.src = IMG_URL+ recommendedMovies[2].backdrop_path;
+      image4.src = IMG_URL+ recommendedMovies[3].backdrop_path;
+    })
+    .catch(error => console.error('Error recommending movies:', error));
+}
+
+
+
 fetch(API_URL)
   .then(response => response.json())
   .then(data => {
-    console.log(API_URL);
     const movies = data.results;
 
       //Functionality for generating top weekly
