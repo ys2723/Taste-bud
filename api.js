@@ -85,18 +85,102 @@ const genres = [
     }
   ]
 
+
+//Images on the carouse;
+const image1 = document.querySelector('.image-1');
+const image2 = document.querySelector('.image-2');
+const image3 = document.querySelector('.image-3');
+const image4 = document.querySelector('.image-4');
+
+
+//Dynamically generating the amount of cards based on the screen width
 const popularMoviesSection = document.getElementById('popular-movies');
 let width = popularMoviesSection.getBoundingClientRect().width;
 width = width/320;
 width = Math.floor(width);
-console.log(width);
+
+
+//Fetching the inputs for year, genre and rating
+const submitButton = document.querySelector('.submit');
+const genreInput = document.querySelector('.genre-box');
+const yearInput = document.querySelector('.year-bar');
+const ratingInput = document.querySelector('.rating-box')
+submitButton.addEventListener('click', () => {
+  let year = '';
+  let rating = '';
+  let genre = '';
+
+  if (yearInput.value) {
+    year = yearInput.value;
+  }
+  if (ratingInput.value) {
+    if(rating.value == "Highest"){
+      API_URL = BASE_URL + '/discover/movie?sort_by=vote_average.desc&' + API_KEY;
+    }
+  }
+  if (genreInput.value) {
+    genre = genreInput.value;
+  }
+
+  fetchMoviesWithParams(year,rating,genre);
+
+  //Resetting the inputs after submit 
+  genreInput.selectedIndex = 0;
+  ratingInput.selectedIndex = 0;
+  yearInput.value = '';
+  
+});
+
+
+//Fetching the input for a search
+const searchInput = document.querySelector('.search-bar');
+searchInput.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        const searchInput = yearInput.value;
+        //Call function
+    }
+});
+
+
+function fetchMoviesWithParams(year, rating, genre) {
+  let url = API_URL;
+
+  if (year) {
+    url += `&primary_release_year=${year}`;
+  }
+  if (rating === 'Highest') {
+    url += '&sort_by=vote_average.desc';
+  } else if (rating === 'Lowest') {
+    url += '&sort_by=vote_average.asc';
+  }
+  if (genre) {
+    url += `&with_genres=${genre}`;
+  }
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const movies = data.results;
+      console.log(movies);
+      image1.src = IMG_URL+ movies[1].backdrop_path;
+      image2.src = IMG_URL+ movies[2].backdrop_path;
+      image3.src = IMG_URL+ movies[3].backdrop_path;
+      image4.src = IMG_URL+ movies[4].backdrop_path;
+      
+    })
+    .catch(error => console.error('Error fetching data:', error));
+}
+
+
 
 // Fetch data from the API
 fetch(API_URL)
   .then(response => response.json())
   .then(data => {
+    console.log(API_URL);
     const movies = data.results;
 
+      //Functionality for generating top weekly
       for(let i=0;i<width;i++){
         const card = document.createElement('div');
         card.classList.add('card');
@@ -108,62 +192,6 @@ fetch(API_URL)
 
         popularMoviesSection.appendChild(card);
       }
-
-    const releaseYearFilter = document.getElementById('release-year-filter');
-
-    // Add event listener to the filter
-    releaseYearFilter.addEventListener('change', () => {
-      const selectedYear = releaseYearFilter.value;
-
-      // Filter movies based on the selected year
-      const filteredMovies = movies.filter(movie => {
-        if (selectedYear === "") {
-          return true; // Show all movies when no year is selected
-        } else {
-          return new Date(movie.release_date).getFullYear() === parseInt(selectedYear);
-        }
-      });
-
-      // Clear the popularMoviesSection
-      popularMoviesSection.innerHTML = "";
-
-      // Display filtered movies
-      for (let i = 0; i < width; i++) {
-        const card = document.createElement('div');
-        card.classList.add('card');
-
-        const movieImage = document.createElement('img');
-        movieImage.src = IMG_URL + filteredMovies[i].poster_path;
-        movieImage.alt = filteredMovies[i].title + ' Poster';
-        card.appendChild(movieImage);
-
-        popularMoviesSection.appendChild(card);
-      }
-    });
-
-    const filteredMovies = movies.filter(movie => {
-      if (selectedGenre === "") {
-        return true; // Show all movies when no genre is selected
-      } else {
-        return movie.genre_ids.includes(parseInt(selectedGenre));
-      }
-    });
-
-    // Clear the popularMoviesSection
-    popularMoviesSection.innerHTML = "";
-
-    // Display filtered movies
-    for (let i = 0; i < width; i++) {
-      const card = document.createElement('div');
-      card.classList.add('card');
-
-      const movieImage = document.createElement('img');
-      movieImage.src = IMG_URL + filteredMovies[i].poster_path;
-      movieImage.alt = filteredMovies[i].title + ' Poster';
-      card.appendChild(movieImage);
-
-      popularMoviesSection.appendChild(card);
-    }
 
   })
   .catch(error => console.error('Error fetching data:', error));

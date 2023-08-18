@@ -247,9 +247,10 @@ input:focus::placeholder {
     appearance: none;
 }
 
-.genre-box:hover, .rating-box:hover {
+.genre-box:hover, .rating-box:hover, .submit:hover {
     background-color: #292929;
     appearance: none;
+    cursor: pointer;
 }
 
   /* Year */
@@ -263,6 +264,7 @@ input:focus::placeholder {
     outline: 0;
     cursor: pointer;
     padding: 10px;
+    font-weight: bold;
 }
 
 .year-bar::placeholder {
@@ -309,3 +311,16 @@ input:focus::placeholder {
     height: 40px;
     width: 40px;
 }    
+
+
+.submit{
+    width: 115px;
+    height: 40px;
+    background-color: #161617;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: bold;
+}
