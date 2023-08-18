@@ -39,5 +39,7 @@ label {
 }
 
 img.track {
-  border: 3px solid #8a8a8a;
-}
+    border: 3px solid #8a8a8a;
+    width: 50%; /* Adjust this value to make the image bigger */
+    height: 40%; /* Maintain aspect ratio */
+  }
