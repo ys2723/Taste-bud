@@ -24,13 +24,8 @@ body{
     height: 100vh;
     width: 100vw;
     display: grid;
-<<<<<<< Updated upstream
-    grid-template-columns: 60px 1fr 1px;
-    grid-template-rows: 60px 80% 75%;
-=======
     grid-template-columns: 80px 1fr 1px;
-    grid-template-rows: 80px minmax(528px,1fr) minmax(400px, 1fr);
->>>>>>> Stashed changes
+    grid-template-rows: 80px max(63%,600px) 75%;
     grid-column-gap: 50px; 
     overflow-x: hidden;
 
@@ -41,14 +36,16 @@ aside{
     background-color: var(--element-bg);
     border-radius: 0px 20px 20px 0px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 header{
     background-color: var(--element-bg);
     border-radius: 0px 0px 20px 20px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
@@ -88,14 +85,12 @@ header{
     border-radius: 20px;
 }
 
-<<<<<<< Updated upstream
 .card > img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 20px;
 }
-
 /* Styling the Carousel */
 
 .carousel {
@@ -160,12 +155,23 @@ header{
 
 .carousel-indicator.active {
     background-color: var(--purple-accent);
-=======
+}
+
+/*right bar*/
+
+.right-bar{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    margin-right: 24px;
+}
+
 /*input value*/
 
 input {
     color: #9747FF;
-    font-size: 24px;
+    font-size: 18px;
   }
 
 input::placeholder {
@@ -177,7 +183,8 @@ input::placeholder {
 input:focus::placeholder {
     color: transparent;
   }
-/* search bar */
+
+  /*search bar*/
 
 .search{
     display: flex;
@@ -189,10 +196,9 @@ input:focus::placeholder {
 
 .search-icon{
     color: #9747FF;
-    width: 7%;
-    height: 7%;
+    width: 2rem;
+    height: 2rem;
 }
-
 .search-bar {
     width: 400px;
     height: 48px;
@@ -205,29 +211,21 @@ input:focus::placeholder {
     margin-left: auto;
     margin-right: auto;
   }
-  
-  .search-bar:focus {
+
+.search-bar:focus {
     background-color: #292929;
   }
   
-  .search-bar::placeholder {
+.search-bar::placeholder {
     color: #9747FF;
     font-size: 16px;
     text-transform: capitalize;
-    padding-left: 12px;
+    padding-left: 10px;
   }
 
 .b-1{
-color: white;
-font-weight: 600;
-}
-  
-.right-bar{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-    margin-right: 24px;
+    color: white;
+    font-weight: 600;
 }
 
   /* Genre And Rating*/
@@ -236,6 +234,7 @@ font-weight: 600;
     width: 115px;
     height: 40px;
     border-radius: 16px;
+    font-weight: 600;
     background-color: #161617;
     border: 0;
     outline: 0;
@@ -249,7 +248,7 @@ font-weight: 600;
 .genre-box:hover, .rating-box:hover {
     background-color: #292929;
     appearance: none;
-  }
+}
 
   /* Year */
 
@@ -261,18 +260,18 @@ font-weight: 600;
     border: 0;
     outline: 0;
     cursor: pointer;
+    padding: 10px;
 }
 
 .year-bar::placeholder {
     color: white;
     font-size: 13px;
     text-transform: capitalize;
-    padding-left: 10px;
-  }
+}
 
-    /* Drop Down Arrow*/
+/* Drop Down Arrow*/
 
-.select-arrow {
+/* .select-arrow {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -282,14 +281,14 @@ font-weight: 600;
     border-top: 4px solid #161617;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
-    cursor: pointer;
-    }
-    
-    .select-arrow.open {
+    cursor: pointer;        
+}
+
+.select-arrow.open {
     width: 8px;
     height: 8px;
     border-top-color: #9747FF;
-    }
+} */
 
 /*nav bar*/
 
@@ -299,8 +298,12 @@ font-weight: 600;
 }
 
 .nav{
+    align-items: center;
+    justify-content: center;
     display: flex;
     gap: 50px;
     flex-direction: column;
->>>>>>> Stashed changes
-}
+    position: absolute; 
+    left: 0;
+    transform: translate(32%, -65%);
+    }
