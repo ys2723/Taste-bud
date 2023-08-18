@@ -1,3 +1,4 @@
+
 const APIController = (function() {
     
     const clientId = '929d29060efc45acb3c22164a591f817';
@@ -176,13 +177,7 @@ const UIController = (function() {
             return {
                 token: document.querySelector(DOMElements.hfToken).value
             }
-        },
-
-        createArtist(artistName) {
-            const detailDiv = document.querySelector(DOMElements.divSongDetail);
-            const artistHtml = `<p class="artist-name">By ${artistName}</p>`;
-            detailDiv.insertAdjacentHTML('beforeend', artistHtml);
-        },
+        }
     }
 
 })();
@@ -254,20 +249,6 @@ const APPController = (function(UICtrl, APICtrl) {
         // load the track details
         UICtrl.createTrackDetail(track.album.images[2].url, track.name, track.artists[0].name);
     });    
-    
-    DOMInputs.tracks.addEventListener('click', async (e) => {
-        e.preventDefault();
-        UICtrl.resetTrackDetail();
-        const token = UICtrl.getStoredToken().token;
-        const trackEndpoint = e.target.id;
-        const track = await APICtrl.getTrack(token, trackEndpoint);
-        UICtrl.createTrackDetail(track.album.images[2].url, track.name, track.artists[0].name);
-    
-        // Display artists
-        track.artists.forEach(artist => UICtrl.createArtist(artist.name));
-    });
-
-
 
     return {
         init() {
