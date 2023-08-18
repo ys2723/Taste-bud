@@ -8,14 +8,34 @@
 
 body {
     background-color: #161617;
-    background-image: url("Background-Image/back_image.jpeg");
+    background-image: url("../images/back_image.png");
     padding-top: 0px;
     margin-top: 0px;
     font-family: 'Poppins', sans-serif;
     background-position: center;
     background-repeat: no-repeat;
     background-position: 0 1;
+    animation: moveBackground 30s ease-in-out infinite;
 }
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 25% 25%;
+    }
+    50% {
+        background-position: 50% 50%; 
+    }
+    75% {
+        background-position: 75% 75%; 
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
+}
+
 
 .text-taste-bud{
     display: inline;

@@ -5,7 +5,6 @@ const buttons = document.querySelectorAll("[data-carousel-button]");
 let currentIndex = 0;
 let autoSlideInterval = setInterval(autoChangeSlide, 5000);
 
-// Add this function to update the active indicator
 function updateActiveIndicator(index) {
   indicators.forEach(indicator => {
     indicator.classList.remove("active");
@@ -20,11 +19,10 @@ indicators.forEach((indicator, index) => {
 
     updateActiveIndicator(index);
 
-    // Reset the auto slide interval
     clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(autoChangeSlide, 5000);
 
-    currentIndex = index; // Update the currentIndex with the user's choice
+    currentIndex = index;
   });
 });
 
@@ -38,7 +36,6 @@ buttons.forEach(button => {
 
     updateActiveIndicator(currentIndex);
 
-    // Reset the auto slide interval
     clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(autoChangeSlide, 5000);
   });
@@ -52,7 +49,6 @@ function autoChangeSlide() {
 
   updateActiveIndicator(currentIndex);
 
-  // Reset the auto slide interval
   clearInterval(autoSlideInterval);
   autoSlideInterval = setInterval(autoChangeSlide, 5000);
 }
