@@ -5,6 +5,7 @@ const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?'+API_KEY;
 
+
 const genres = [
     {
       "id": 28,
@@ -84,10 +85,12 @@ const genres = [
     }
   ]
 
-const main = document.getElementById('main');
-const form =  document.getElementById('form');
-const search = document.getElementById('search');
-const tagsEl = document.getElementById('tags');
+  const main = document.getElementById('main');
+  const form = document.getElementById('form');
+  const search = document.getElementById('search');
+  const tagsEl = document.getElementById('tags');
+  
+  const displaySection = document.querySelector('.display-section');
 
 const prev = document.getElementById('prev')
 const next = document.getElementById('next')
@@ -203,37 +206,27 @@ function getMovies(url) {
 
 
 function showMovies(data) {
-    main.innerHTML = '';
+    const popularMovies = document.getElementById('popular-movies');
+    popularMovies.innerHTML = '';
 
     data.forEach(movie => {
-        const {title, poster_path, vote_average, overview, id} = movie;
+        const { title, poster_path, vote_average } = movie;
         const movieEl = document.createElement('div');
-        movieEl.classList.add('movie');
+        movieEl.classList.add('card');
         movieEl.innerHTML = `
-             <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
-
-            <div class="movie-info">
+            <img src="${poster_path ? IMG_URL + poster_path : 'http://via.placeholder.com/300x450'}" alt="${title}">
+            <div class="card-info">
                 <h3>${title}</h3>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
+        `;
 
-            <div class="overview">
+        popularMovies.appendChild(movieEl);
 
-                <h3>Overview</h3>
-                ${overview}
-                <br/> 
-                <button class="know-more" id="${id}">Know More</button
-            </div>
-        
-        `
-
-        main.appendChild(movieEl);
-
-        document.getElementById(id).addEventListener('click', () => {
-          console.log(id)
-          openNav(movie)
-        })
-    })
+        movieEl.addEventListener('click', () => {
+            openNav(movie);
+        });
+    });
 }
 
 const overlayContent = document.getElementById('overlay-content');

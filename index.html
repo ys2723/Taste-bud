@@ -3,26 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movie App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="grid">
-        <aside></aside>
-        <header></header>
-        <main class="display-section"></main>
+        <aside id="tags"></aside>
+        <header>
+            <form id="form">
+                <input type="text" id="search" class="search" placeholder="Search...">
+            </form>
+        </header>
+        <main class="display-section" id="main">
+            <!-- Display image here -->
+            <img src="path/to/your/image.jpg" alt="Movie Image">
+        </main>
         <main class="cards-section">
             <div class="wrapper">
                 <div class="popular-text">Popular This Week</div>
             </div>
+<<<<<<< Updated upstream
             <div class="wrapper card-wrapper">
                 <div class="card"></div>
                 <div class="card"></div>
                 <div class="card"></div>
                 <div class="card"></div>
                 <div class="card"></div>
+=======
+            <div class="wrapper" id="popular-movies">
+                <!-- Movie cards will be dynamically added here -->
+>>>>>>> Stashed changes
             </div>
         </main>
     </div>
+
+    <!-- The overlay for displaying movie details -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="overlay-content"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
