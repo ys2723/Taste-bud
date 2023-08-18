@@ -1,6 +1,6 @@
 Project made as a part of Quantathon 1.0 Hackathon. 
 
-<div align="center"><h2><strong>Authors of this Repository.</strong></h2></div>
+<div align="center"><h2><strong>Contributors</strong></h2></div>
 
 <table align="center">
 <tr align="center">
