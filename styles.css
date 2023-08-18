@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto';
 }
 
 :root{
@@ -12,13 +13,18 @@
 
 /* Layout of the website */
 
+body{
+    background-color: var(--main-bg);
+}
+
 .grid{
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 90px 1fr 45px;
-    grid-template-rows: 90px 1fr 1fr;
-    /* grid-column-gap: 50px; */
+    grid-template-columns: 60px 1fr 1px;
+    grid-template-rows: 60px minmax(528px,1fr) minmax(400px, 1fr);
+    grid-column-gap: 50px; 
+
 }
 
 aside{
@@ -30,4 +36,37 @@ aside{
 header{
     background-color: var(--element-bg);
     border-radius: 0px 0px 20px 20px;
+}
+
+.display-section{
+    grid-area: 2 / 2 / 3 / 3;
+    margin-top: 20px;
+    background-color: var(--element-bg);
+}
+
+.cards-section{
+    grid-area: 3 / 2 / 4 / 3;
+    margin-top: 20px;
+}
+
+
+/* Styling the Cards Section */
+
+.popular-text{
+    font-size: 26px;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.wrapper{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    background-color: var(--element-bg);
+    width: 200px;
+    height: 100%;
 }
