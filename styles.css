@@ -24,8 +24,13 @@ body{
     height: 100vh;
     width: 100vw;
     display: grid;
+<<<<<<< Updated upstream
     grid-template-columns: 60px 1fr 1px;
     grid-template-rows: 60px 80% 75%;
+=======
+    grid-template-columns: 80px 1fr 1px;
+    grid-template-rows: 80px minmax(528px,1fr) minmax(400px, 1fr);
+>>>>>>> Stashed changes
     grid-column-gap: 50px; 
     overflow-x: hidden;
 
@@ -35,11 +40,17 @@ aside{
     grid-area: 1 / 1 / 4 / 2;
     background-color: var(--element-bg);
     border-radius: 0px 20px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 header{
     background-color: var(--element-bg);
     border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .carousel{
@@ -77,6 +88,7 @@ header{
     border-radius: 20px;
 }
 
+<<<<<<< Updated upstream
 .card > img {
     height: 100%;
     width: 100%;
@@ -148,4 +160,147 @@ header{
 
 .carousel-indicator.active {
     background-color: var(--purple-accent);
+=======
+/*input value*/
+
+input {
+    color: #9747FF;
+    font-size: 24px;
+  }
+
+input::placeholder {
+    display: flex;
+    align-items: center;
+    transform: translateY(-15%);
+  }
+
+input:focus::placeholder {
+    color: transparent;
+  }
+/* search bar */
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-left: 24px;
+}
+
+.search-icon{
+    color: #9747FF;
+    width: 7%;
+    height: 7%;
+}
+
+.search-bar {
+    width: 400px;
+    height: 48px;
+    border-radius: 25px;
+    background-color: #161617;
+    border: 0;
+    outline: 0;
+    font-display: white;
+    padding-left: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .search-bar:focus {
+    background-color: #292929;
+  }
+  
+  .search-bar::placeholder {
+    color: #9747FF;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding-left: 12px;
+  }
+
+.b-1{
+color: white;
+font-weight: 600;
+}
+  
+.right-bar{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    margin-right: 24px;
+}
+
+  /* Genre And Rating*/
+
+.genre-box, .rating-box{
+    width: 115px;
+    height: 40px;
+    border-radius: 16px;
+    background-color: #161617;
+    border: 0;
+    outline: 0;
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+    cursor: pointer;
+    appearance: none;
+}
+
+.genre-box:hover, .rating-box:hover {
+    background-color: #292929;
+    appearance: none;
+  }
+
+  /* Year */
+
+.year-bar{
+    width: 115px;
+    height: 40px;
+    border-radius: 16px;
+    background-color: #161617;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.year-bar::placeholder {
+    color: white;
+    font-size: 13px;
+    text-transform: capitalize;
+    padding-left: 10px;
+  }
+
+    /* Drop Down Arrow*/
+
+.select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 4px solid #161617;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    }
+    
+    .select-arrow.open {
+    width: 8px;
+    height: 8px;
+    border-top-color: #9747FF;
+    }
+
+/*nav bar*/
+
+.icon{
+    width: 3rem;
+    height: 3rem;
+}
+
+.nav{
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+>>>>>>> Stashed changes
 }
