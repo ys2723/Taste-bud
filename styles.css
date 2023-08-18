@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --element-bg: #000000;
+    --main-bg: #161617;
+}
+
+
+/* Layout of the website */
+
+.grid{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 90px 1fr 45px;
+    grid-template-rows: 90px 1fr 1fr;
+    /* grid-column-gap: 50px; */
+}
+
+aside{
+    grid-area: 1 / 1 / 4 / 2;
+    background-color: var(--element-bg);
+    border-radius: 0px 20px 20px 0px;
+}
+
+header{
+    background-color: var(--element-bg);
+    border-radius: 0px 0px 20px 20px;
+}
