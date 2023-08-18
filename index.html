@@ -1,94 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TasteBud</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="grid">
-        <aside>
-            <div class="nav">
-                <img src="Vector\home.svg" class="icon">
-                <img src="Vector\movie.svg" class="micon">
-                <img src="Vector\tv.svg" class="icon">
-                <img src="Vector\music.svg" class="icon">
-                <img src="Vector\anime.svg"class="icon">
-            </div>
-        </aside>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TasteBud</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="grid">
+            <aside>
+                <div class="nav">
+                    <img src="Vector\home.svg" class="icon">
+                    <img src="Vector\movie.svg" class="micon">
+                    <img src="Vector\tv.svg" class="icon">
+                    <img src="Vector\music.svg" class="icon">
+                    <img src="Vector\anime.svg"class="icon">
+                </div>
+            </aside>
 
-        <header>
-            <div class="search">
-                <img src="Vector\search.svg" alt="search" class="search-icon">
-                <input class="search-bar" type="text" placeholder="Find your movie, shows and more">
-            </div>
-                    <div class="right-bar">
-                    <div class="b-1">BROWSE BY</div>
-                    <select class="genre-box" name="Genere" id="Genre">
-                        <option value="">GENRE</option>
-                        <option value="Action">Action</option>
-                        <option value="Adventure">Adventure</option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Crime">Crime</option>
-                        <option value="Drama">Drama</option>
-                        <option value="Fantasy">Fantasy</option>
-                        <option value="Historical">Historical</option>
-                        <option value="Horror">Horror</option>
-                        <option value="Mystery">Mystery</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Science Fiction">Science Fiction</option>
-                        <option value="Thriller">Thriller</option>
-                        <option value="Western">Western</option>
-                    </select>
-                    <input class="year-bar" type="year" min="1990" max="2023" placeholder="YEAR">
-                    <select class="rating-box" name="rating" id="rating">
-                        <option value="">RATING</option>
-                        <option value="Highest">Highest First</option>
-                        <option value="Lowest">Lowest First</option>
-                    </select>
-                    </div>
-        </header>
+            <header>
+                <div class="search">
+                    <img src="Vector\search.svg" alt="search" class="search-icon">
+                    <input class="search-bar" type="text" placeholder="Find your movie, shows and more">
+                </div>
+                        <div class="right-bar">
+                        <div class="b-1">BROWSE BY</div>
+                        <select class="genre-box" name="Genere" id="Genre">
+                            <option value="">GENRE</option>
+                            <option value="Action">Action</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Crime">Crime</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Historical">Historical</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Science Fiction">Science Fiction</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Western">Western</option>
+                        </select>
+                        <input class="year-bar" type="year" min="1990" max="2023" placeholder="YEAR">
+                        <select class="rating-box" name="rating" id="rating">
+                            <option value="">RATING</option>
+                            <option value="Highest">Highest First</option>
+                            <option value="Lowest">Lowest First</option>
+                        </select>
+                        </div>
+            </header>
 
-        <main class="display-section carousel" data-carousel>
-            
-            <ul data-slides>
-              <li class="slide" data-active data-index="0">
-                <img src="images\there will be blood.jpg" alt="Nature Image #1">
-              </li>
-              <li class="slide" data-index="1">
-                <img src="./images/asteroid city.jpg" alt="Nature Image #2">
-              </li>
-              <li class="slide" data-index="2">
-                <img src="./images/The-Irishman.jpg" alt="Nature Image #3">
-              </li>
-              <li class="slide" data-index="3">
-                <img src="./images/dunkirk.jpg" alt="Nature Image #4">
-              </li>
-            </ul>
+            <main class="display-section carousel" data-carousel>
+                
+                <ul data-slides>
+                <li class="slide" data-active data-index="0">
+                    <img src="images\there will be blood.jpg" alt="Nature Image #1">
+                </li>
+                <li class="slide" data-index="1">
+                    <img src="./images/asteroid city.jpg" alt="Nature Image #2">
+                </li>
+                <li class="slide" data-index="2">
+                    <img src="./images/The-Irishman.jpg" alt="Nature Image #3">
+                </li>
+                <li class="slide" data-index="3">
+                    <img src="./images/dunkirk.jpg" alt="Nature Image #4">
+                </li>
+                </ul>
 
-            <div class="carousel-indicators">
-                <button class="carousel-indicator active" data-slide-index="0"></button>
-                <button class="carousel-indicator" data-slide-index="1"></button>
-                <button class="carousel-indicator" data-slide-index="2"></button>
-                <button class="carousel-indicator" data-slide-index="3"></button>
-            </div>
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide-index="0"></button>
+                    <button class="carousel-indicator" data-slide-index="1"></button>
+                    <button class="carousel-indicator" data-slide-index="2"></button>
+                    <button class="carousel-indicator" data-slide-index="3"></button>
+                </div>
 
-        </main>
+            </main>
 
 
-        <main class="cards-section">
-            <div class="wrapper">
-                <div class="popular-text">This Week Trending Movies</div>
-            </div>
-            <div id="popular-movies" class="wrapper card-wrapper">
-                <!-- Cards are inserted here -->
-            </div>
-        </main>
-    </div>
+            <main class="cards-section">
+                <div class="wrapper">
+                    <div class="popular-text">This Week Trending Movies</div>
+                </div>
+                <div id="popular-movies" class="wrapper card-wrapper">
+                    <!-- Cards are inserted here -->
+                </div>
+            </main>
+        </div>
 
-    <script src="api.js"></script>
-    <script src="carousel.js"></script>
-    <script src="input.js"></script>
-</body>
-</html>
+        <script src="api.js"></script>
+        <script src="carousel.js"></script>
+        <script src="input.js"></script>
+    </body>
+    </html>
