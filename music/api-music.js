@@ -1,9 +1,4 @@
 
-
-// var client_id = ''; 
-// var client_secret = '4d8dfe0f443840e7bfe6ec1c21f6d146';
-// var redirect_url: 'http://localhost:5500'; 
-
 const APIController = (function() {
     
     const clientId = '929d29060efc45acb3c22164a591f817';
