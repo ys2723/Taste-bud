@@ -83,8 +83,7 @@ const genres = [
     }
   ]
 
-
-  const popularMoviesSection = document.getElementById('popular-movies');
+const popularMoviesSection = document.getElementById('popular-movies');
 
 // Fetch data from the API
 fetch(API_URL)
@@ -117,5 +116,3 @@ fetch(API_URL)
     });
   })
   .catch(error => console.error('Error fetching data:', error));
-
-
