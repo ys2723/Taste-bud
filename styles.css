@@ -69,6 +69,8 @@ header{
 
 .card{
     background-color: var(--element-bg);
-    width: 200px;
-    height: 100%;
+    width: calc(25% - 20px);
+    height: 450px;
+    border-radius: 20px;
 }
+
