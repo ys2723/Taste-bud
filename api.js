@@ -1,12 +1,12 @@
 // import { sortMovies } from './sortMovies';
 
-const API_KEY = 'api_key=774c45332d4ea2aafdb9848019af87e5';
-const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
-const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-const searchURL = BASE_URL + '/search/movie?'+API_KEY;
-
-const genres = [
+  const API_KEY = 'api_key=774c45332d4ea2aafdb9848019af87e5';
+  const BASE_URL = 'https://api.themoviedb.org/3';
+  const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+  const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+  const searchURL = BASE_URL + '/search/movie?' + API_KEY;
+  
+  const genres = [
     {
       "id": 28,
       "name": "Action"
@@ -85,85 +85,82 @@ const genres = [
     }
   ]
 
-const popularMoviesSection = document.getElementById('popular-movies');
-let width = popularMoviesSection.getBoundingClientRect().width;
-width = width/320;
-width = Math.floor(width);
-console.log(width);
-
-// Fetch data from the API
-fetch(API_URL)
-  .then(response => response.json())
-  .then(data => {
-    const movies = data.results;
-
-      for(let i=0;i<width;i++){
-        const card = document.createElement('div');
-        card.classList.add('card');
-
-        const movieImage = document.createElement('img');
-        movieImage.src =IMG_URL+ movies[i].poster_path;
-        movieImage.alt = movies[i].title + ' Poster';
-        card.appendChild(movieImage);
-
-        popularMoviesSection.appendChild(card);
-      }
-
-    const releaseYearFilter = document.getElementById('release-year-filter');
-
-    // Add event listener to the filter
-    releaseYearFilter.addEventListener('change', () => {
-      const selectedYear = releaseYearFilter.value;
-
-      // Filter movies based on the selected year
-      const filteredMovies = movies.filter(movie => {
-        if (selectedYear === "") {
-          return true; // Show all movies when no year is selected
-        } else {
-          return new Date(movie.release_date).getFullYear() === parseInt(selectedYear);
-        }
-      });
-
-      // Clear the popularMoviesSection
-      popularMoviesSection.innerHTML = "";
-
-      // Display filtered movies
+  const popularMoviesSection = document.getElementById('popular-movies');
+  let width = popularMoviesSection.getBoundingClientRect().width;
+  width = width / 320;
+  width = Number(width);
+  
+  // Declare filter variables
+  const genreSelect = document.getElementById('Genre');
+  const yearInput = document.querySelector('.year-bar');
+  const ratingSelect = document.getElementById('rating');
+  
+  // Fetch data from the API
+  fetch(API_URL)
+    .then(response => response.json())
+    .then(data => {
+      const movies = data.results;
+  
       for (let i = 0; i < width; i++) {
         const card = document.createElement('div');
         card.classList.add('card');
-
+  
         const movieImage = document.createElement('img');
-        movieImage.src = IMG_URL + filteredMovies[i].poster_path;
-        movieImage.alt = filteredMovies[i].title + ' Poster';
+        movieImage.src = IMG_URL + movies[i].poster_path;
+        movieImage.alt = movies[i].title + ' Poster';
         card.appendChild(movieImage);
-
+  
         popularMoviesSection.appendChild(card);
       }
-    });
-
-    const filteredMovies = movies.filter(movie => {
-      if (selectedGenre === "") {
-        return true; // Show all movies when no genre is selected
-      } else {
-        return movie.genre_ids.includes(parseInt(selectedGenre));
+  
+      // Apply filters function
+      function applyFilters() {
+        const selectedGenre = genreSelect.value;
+        const selectedYear = yearInput.value;
+        const selectedRating = ratingSelect.value;
+  
+        let filterURL = API_URL;
+  
+        if (selectedGenre) {
+          filterURL += `&with_genres=${selectedGenre}`;
+        }
+        if (selectedYear) {
+          filterURL += `&primary_release_year=${selectedYear}`;
+        }
+        if (selectedRating === 'Highest') {
+          filterURL += '&sort_by=vote_average.desc';
+        } else if (selectedRating === 'Lowest') {
+          filterURL += '&sort_by=vote_average.asc';
+        }
+  
+        fetch(filterURL)
+          .then(response => response.json())
+          .then(data => {
+            popularMoviesSection.innerHTML = '';
+  
+            const movies = data.results;
+            for (let i = 0; i < width && i < movies.length; i++) {
+              const card = document.createElement('div');
+              card.classList.add('card');
+  
+              const movieImage = document.createElement('img');
+              movieImage.src = IMG_URL + movies[i].poster_path;
+              movieImage.alt = movies[i].title + ' Poster';
+              card.appendChild(movieImage);
+  
+              popularMoviesSection.appendChild(card);
+            }
+          })
+          .catch(error => console.error('Error fetching filtered data:', error));
       }
-    });
-
-    // Clear the popularMoviesSection
-    popularMoviesSection.innerHTML = "";
-
-    // Display filtered movies
-    for (let i = 0; i < width; i++) {
-      const card = document.createElement('div');
-      card.classList.add('card');
-
-      const movieImage = document.createElement('img');
-      movieImage.src = IMG_URL + filteredMovies[i].poster_path;
-      movieImage.alt = filteredMovies[i].title + ' Poster';
-      card.appendChild(movieImage);
-
-      popularMoviesSection.appendChild(card);
-    }
-
-  })
-  .catch(error => console.error('Error fetching data:', error));
+  
+      // Add event listeners
+      genreSelect.addEventListener('change', applyFilters);
+      yearInput.addEventListener('input', applyFilters);
+      ratingSelect.addEventListener('change', applyFilters);
+  
+      // Call applyFilters initially
+      applyFilters();
+    })
+    .catch(error => console.error('Error fetching data:', error));
+  
