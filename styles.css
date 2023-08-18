@@ -292,11 +292,6 @@ input:focus::placeholder {
     transform: translate(32%, -65%);
     }
 
-.icon{
-    height: 40px;
-    width: 40px;
-}    
-
 .submit{
     width: 115px;
     height: 40px;
@@ -317,6 +312,25 @@ input:focus::placeholder {
 }
 
 .hover{
-    position: 
-    z-index: 2;
+  position: absolute;
+  top: -2.5%;
+  left: -26%;
+  z-index: 1;
+  animation: rotate 5s linear infinite;
 }
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.icon{
+    position: relative;
+    z-index: 2;
+    height: 40px;
+    width: 40px;
+}    
