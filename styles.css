@@ -25,7 +25,7 @@ body{
     width: 100vw;
     display: grid;
     grid-template-columns: 60px 1fr 1px;
-    grid-template-rows: 60px minmax(528px,1fr) minmax(400px, 1fr);
+    grid-template-rows: 60px 1.1fr 1fr;
     grid-column-gap: 50px; 
     overflow-x: hidden;
 
@@ -69,10 +69,17 @@ header{
     justify-content: center;
 }
 
-.card{
+.card {
     background-color: var(--element-bg);
-    width: calc(25% - 20px);
+    width: 320px;
     height: 450px;
+    border-radius: 20px;
+}
+
+.card > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     border-radius: 20px;
 }
 

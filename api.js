@@ -84,6 +84,9 @@ const genres = [
   ]
 
 const popularMoviesSection = document.getElementById('popular-movies');
+let width = popularMoviesSection.getBoundingClientRect().width;
+width = width/320;
+width = Number(width);
 
 // Fetch data from the API
 fetch(API_URL)
@@ -91,28 +94,19 @@ fetch(API_URL)
   .then(data => {
     const movies = data.results;
 
-    // Iterate through the movies and create HTML elements
-    movies.forEach(movie => {
-      const movieCard = document.createElement('div');
-      movieCard.classList.add('card');
 
-      const movieTitle = document.createElement('h3');
-      movieTitle.textContent = movie.title;
-
-      const movieOverview = document.createElement('p');
-      movieOverview.textContent = movie.overview;
+    for(let i=0;i<width;i++){
+      const card = document.createElement('div');
+      card.classList.add('card');
 
       const movieImage = document.createElement('img');
-      movieImage.src = IMG_URL + movie.poster_path;
-      movieImage.alt = movie.title + ' Poster';
+      movieImage.src =IMG_URL+ movies[i].poster_path;
+      movieImage.alt = movies[i].title + ' Poster';
+      card.appendChild(movieImage);
 
-      // Append elements to the movie card
-      movieCard.appendChild(movieImage);
-      movieCard.appendChild(movieTitle);
-      movieCard.appendChild(movieOverview);
+      popularMoviesSection.appendChild(card);
+    }
 
-      // Append the movie card to the popular movies section
-      popularMoviesSection.appendChild(movieCard);
-    });
+
   })
   .catch(error => console.error('Error fetching data:', error));
