@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@800&family=Rubik:wght@900&display=swap');
 
 *{
     padding: 0;
@@ -43,18 +43,20 @@ body {
 
 .text-taste-bud{
     filter: unset;
-    display: inline;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    font-family: Graphik;
     font-size: 140px;
     padding: 0;
     margin: 0;
     margin-top: 0px;
     text-align: center;
-    font-weight: 800;
+    font-weight: 950;
+    
 }
 
 .first-text{
-    margin: 0px;
+    padding-top: 1%;
+    margin-left: 40px;
 }
 
 .second-text{
@@ -66,23 +68,63 @@ body {
 }
 
 .text-bud{
-    background: -webkit-linear-gradient(290deg,#B04EDF, #6C22CC);
+    background: linear-gradient(143deg, #B04EDF 14.32%, #6C22CC 76.29%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .text-tagline{
-    display: inline;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    margin-left: 370px;
+    font-family: Graphik;
     font-size: 40px;
-    text-align: center;
-    font-weight: 300;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .text-go_by_your{
-    color: white;
+    color: #FFF;
+
 }
 
 .text-taste-alt{
     color: #9747FF;
+}
+
+.log-in-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 315px;
+    height: 90px;
+    border-radius: 45px;
+    background: linear-gradient(186deg, rgba(181, 123, 238, 0.55) 6.58%, rgba(149, 103, 204, 0.55) 19.64%, rgba(125, 88, 178, 0.55) 38.09%, rgba(88, 65, 138, 0.55) 60.59%, rgba(69, 52, 118, 0.55) 79.66%, rgba(57, 45, 105, 0.55) 94.57%);
+    backdrop-filter: blur(7.5px);
+    border: none;
+    outline: none;
+    margin-left: 80%;
+    margin-top: 34%;
+}
+
+.log-in{
+    display: flex;
+    color: #FFF;
+    font-family: Graphik;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.google{
+    height: 30px;
+    width: 30px;
+}
+
+.log-align{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
