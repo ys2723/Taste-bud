@@ -81,11 +81,7 @@ header{
 .card {
     background-color: var(--element-bg);
     width: 320px;
-<<<<<<< Updated upstream
     height: 420px;
-=======
-    height: 20%;
->>>>>>> Stashed changes
     border-radius: 20px;
 }
 
