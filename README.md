@@ -1,1 +1,1 @@
-# Taste-bud
+Project made as a part of Quantathon 1.0 Hackathon. 
