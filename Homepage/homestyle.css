@@ -17,26 +17,26 @@ body {
     background-color: #161617;
     background-image: url("../images/back_image.png");
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: 0 1;
-    animation: moveBackground 30s ease-in infinite;
+    animation: moveBackground 20s linear infinite alternate;
 }
 
 @keyframes moveBackground {
     0% {
-        background-position: 28% 27%;
+        background-position: 90% 90%; 
     }
     25% {
-        background-position: 50% 50%;
+        background-position: 75% 75%; 
     }
     50% {
-        background-position: 75% 75%; 
+        background-position: 60% 60%; 
     }
     75% {
-        background-position: 75% 75%; 
+        background-position: 40% 40%;
     }
     100% {
-        background-position: 100% 100%; 
+        background-position: 28% 27%;
     }
 }
 
