@@ -21,7 +21,7 @@
   </div>
   </div> 
 </body>
-</html>
+
 
 
 <script type="module">
@@ -47,6 +47,8 @@
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
     const auth = getAuth();
+    
+    
 
     signUp.addEventListener('click',(e) =>{
 
@@ -127,4 +129,5 @@ logout.addEventListener('click', (e) => {
 });
 
 });
-  </script>
+</script>
+</html>
