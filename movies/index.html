@@ -1,127 +1,127 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TasteBud</title>
-        <link rel="stylesheet" href="../styles.css">
-    </head>
-    <body>
-        <div class="grid">
-            <aside>
-                <div class="nav">
-                  <img src="../Vector\hover.svg" class="hover"> 
-                  <img src="../Vector\home.svg" class="icon">
-                  <img src="../Vector\movie.svg" class="micon">
-                  <img src="../Vector\tv.svg" class="icon">
-                  <img src="../Vector\music.svg" class="icon">
-                  <img src="../Vector\anime.svg" class="icon">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TasteBud</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="grid">
+        <aside>
+            <div class="nav">
+                <img src="../Vector\hover.svg" class="hover"> 
+                <a href = "http://127.0.0.1:5500/Homepage/index.html"><img src="../Vector\home.svg" class="icon"></a>
+                <a href = "http://127.0.0.1:5500/movies/index.html"><img src="../Vector\movie.svg" class="micon"></a>
+                <a href = "http://127.0.0.1:5500/shows/index-shows.html"><img src="../Vector\tv.svg" class="icon"></a>
+                <img src="../Vector\music.svg" class="icon">
+                <img src="../Vector\anime.svg" class="icon">
+            </div>
+            </aside>
+
+        <header>
+            <div class="search">
+                <img src="../Vector\search.svg" alt="search" class="search-icon">
+                <input class="search-bar" type="text" placeholder="Search. . .">
+            </div>
+                    <div class="right-bar">
+                    <div class="b-1">BROWSE BY</div>
+                    <select class="genre-box" name="Genere" id="Genre">
+                        <option value="">GENRE</option>
+                        <option value="Action">Action</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Crime">Crime</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Historical">Historical</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Mystery">Mystery</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Science Fiction">Science Fiction</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Western">Western</option>
+                    </select>
+                    <input class="year-bar" type="number" min="1990" max="2023" placeholder="YEAR">
+                    <select class="rating-box" name="rating" id="rating">
+                        <option value="">RATING</option>
+                        <option value="Highest">Highest First</option>
+                        <option value="Lowest">Lowest First</option>
+                    </select>
+                    <button class="submit">Submit</button>
                 </div>
-              </aside>
+        </header>
 
-            <header>
-                <div class="search">
-                    <img src="../Vector\search.svg" alt="search" class="search-icon">
-                    <input class="search-bar" type="text" placeholder="Search. . .">
+        <main class="display-section carousel" data-carousel>
+            
+            <ul data-slides>
+            <li class="slide" data-active data-index="0">
+                <img src="../images\there will be blood.jpg" class="image-1">
+                <div class="overlay">
+                    <div class="movie-name name-1">There will be blood</div>
+                    <div class="rating-wrapper">
+                        <div class="movie-rating rating-1">8.1</div>
+                        <img src="../images/IMDB_Logo_2016.svg" alt="imdb logo" class="imdb">
+                    </div>
+                    <div class="movie-desc desc-1">Ruthless silver miner, turned oil prospector, Daniel Plainview, moves to oil-rich California. Using his son to project a trustworthy, family-man image, Plainview cons local landowners into selling him their valuable properties for a pittance. However, local preacher Eli Sunday suspects Plainview's motives and intentions, starting a slow-burning feud that threatens both their lives.</div>
                 </div>
-                        <div class="right-bar">
-                        <div class="b-1">BROWSE BY</div>
-                        <select class="genre-box" name="Genere" id="Genre">
-                            <option value="">GENRE</option>
-                            <option value="Action">Action</option>
-                            <option value="Adventure">Adventure</option>
-                            <option value="Comedy">Comedy</option>
-                            <option value="Crime">Crime</option>
-                            <option value="Drama">Drama</option>
-                            <option value="Fantasy">Fantasy</option>
-                            <option value="Historical">Historical</option>
-                            <option value="Horror">Horror</option>
-                            <option value="Mystery">Mystery</option>
-                            <option value="Romance">Romance</option>
-                            <option value="Science Fiction">Science Fiction</option>
-                            <option value="Thriller">Thriller</option>
-                            <option value="Western">Western</option>
-                        </select>
-                        <input class="year-bar" type="number" min="1990" max="2023" placeholder="YEAR">
-                        <select class="rating-box" name="rating" id="rating">
-                            <option value="">RATING</option>
-                            <option value="Highest">Highest First</option>
-                            <option value="Lowest">Lowest First</option>
-                        </select>
-                        <button class="submit">Submit</button>
+            </li>
+            <li class="slide" data-index="1">
+                <img src="../images/asteroid city.jpg" class="image-2">
+                <div class="overlay">
+                    <div class="movie-name name-2">Asteroid City</div>
+                    <div class="rating-wrapper">
+                        <div class="movie-rating rating-2">6.7</div>
+                        <img src="../images/IMDB_Logo_2016.svg" alt="imdb logo" class="imdb">
                     </div>
-            </header>
-
-            <main class="display-section carousel" data-carousel>
-                
-                <ul data-slides>
-                <li class="slide" data-active data-index="0">
-                    <img src="../images\there will be blood.jpg" class="image-1">
-                    <div class="overlay">
-                        <div class="movie-name name-1">There will be blood</div>
-                        <div class="rating-wrapper">
-                            <div class="movie-rating rating-1">8.1</div>
-                            <img src="../images/IMDB_Logo_2016.svg" alt="imdb logo" class="imdb">
-                        </div>
-                        <div class="movie-desc desc-1">Ruthless silver miner, turned oil prospector, Daniel Plainview, moves to oil-rich California. Using his son to project a trustworthy, family-man image, Plainview cons local landowners into selling him their valuable properties for a pittance. However, local preacher Eli Sunday suspects Plainview's motives and intentions, starting a slow-burning feud that threatens both their lives.</div>
-                    </div>
-                </li>
-                <li class="slide" data-index="1">
-                    <img src="../images/asteroid city.jpg" class="image-2">
-                    <div class="overlay">
-                        <div class="movie-name name-2">Asteroid City</div>
-                        <div class="rating-wrapper">
-                            <div class="movie-rating rating-2">6.7</div>
-                            <img src="../images/IMDB_Logo_2016.svg" alt="imdb logo" class="imdb">
-                        </div>
-                        <div class="movie-desc desc-2">In an American desert town circa 1955, the itinerary of a Junior Stargazer/Space Cadet convention is spectacularly disrupted by world-changing events.</div>
-                    </div>
-                </li>
-                <li class="slide" data-index="2">
-                    <img src="../images/The-Irishman.jpg" class="image-3">
-                    <div class="overlay">
-                        <div class="movie-name name-3">The Irishman</div>
-                        <div class="rating-wrapper">
-                            <div class="movie-rating rating-3">7.6</div>
-                            <img src="../images/IMDB_Logo_2016.svg" alt="imdb logo" class="imdb">
-                        </div>
-                        <div class="movie-desc desc-3">Pennsylvania, 1956. Frank Sheeran, a war veteran of Irish origin who works as a truck driver, accidentally meets mobster Russell Bufalino. Once Frank becomes his trusted man, Bufalino sends him to Chicago with the task of helping Jimmy Hoffa, a powerful union leader related to organized crime, with whom Frank will maintain a close friendship for nearly twenty years.</div>
-                    </div>
-                </li>
-                <li class="slide" data-index="3">
-                    <img src="../images/dunkirk.jpg" class="image-4">
-                    <div class="overlay">
-                        <div class="movie-name name-4">Dunkirk</div>
-                        <div class="rating-wrapper">
-                            <div class="movie-rating rating-4">7.5</div>
-                            <img src="../images/IMDB_Logo_2016.svg" alt="imdb logo" class="imdb">
-                        </div>
-                        <div class="movie-desc desc-4">The story of the miraculous evacuation of Allied soldiers from Belgium, Britain, Canada and France, who were cut off and surrounded by the German army from the beaches and harbour of Dunkirk between May 26th and June 4th 1940 during World War II.</div>
-                    </div>
-                </li>
-                </ul>
-
-                <div class="carousel-indicators">
-                    <button class="carousel-indicator active" data-slide-index="0"></button>
-                    <button class="carousel-indicator" data-slide-index="1"></button>
-                    <button class="carousel-indicator" data-slide-index="2"></button>
-                    <button class="carousel-indicator" data-slide-index="3"></button>
+                    <div class="movie-desc desc-2">In an American desert town circa 1955, the itinerary of a Junior Stargazer/Space Cadet convention is spectacularly disrupted by world-changing events.</div>
                 </div>
-
-            </main>
-
-
-            <main class="cards-section">
-                <div class="wrapper">
-                    <div class="popular-text">This Week Trending Movies</div>
+            </li>
+            <li class="slide" data-index="2">
+                <img src="../images/The-Irishman.jpg" class="image-3">
+                <div class="overlay">
+                    <div class="movie-name name-3">The Irishman</div>
+                    <div class="rating-wrapper">
+                        <div class="movie-rating rating-3">7.6</div>
+                        <img src="../images/IMDB_Logo_2016.svg" alt="imdb logo" class="imdb">
+                    </div>
+                    <div class="movie-desc desc-3">Pennsylvania, 1956. Frank Sheeran, a war veteran of Irish origin who works as a truck driver, accidentally meets mobster Russell Bufalino. Once Frank becomes his trusted man, Bufalino sends him to Chicago with the task of helping Jimmy Hoffa, a powerful union leader related to organized crime, with whom Frank will maintain a close friendship for nearly twenty years.</div>
                 </div>
-                <div id="popular-movies" class="wrapper card-wrapper">
-                    <!-- Cards are inserted here -->
+            </li>
+            <li class="slide" data-index="3">
+                <img src="../images/dunkirk.jpg" class="image-4">
+                <div class="overlay">
+                    <div class="movie-name name-4">Dunkirk</div>
+                    <div class="rating-wrapper">
+                        <div class="movie-rating rating-4">7.5</div>
+                        <img src="../images/IMDB_Logo_2016.svg" alt="imdb logo" class="imdb">
+                    </div>
+                    <div class="movie-desc desc-4">The story of the miraculous evacuation of Allied soldiers from Belgium, Britain, Canada and France, who were cut off and surrounded by the German army from the beaches and harbour of Dunkirk between May 26th and June 4th 1940 during World War II.</div>
                 </div>
-            </main>
-        </div>
+            </li>
+            </ul>
 
-        <script src="api-movies.js"></script>
-        <script src="../carousel.js"></script>
-    </body>
-    </html>
+            <div class="carousel-indicators">
+                <button class="carousel-indicator active" data-slide-index="0"></button>
+                <button class="carousel-indicator" data-slide-index="1"></button>
+                <button class="carousel-indicator" data-slide-index="2"></button>
+                <button class="carousel-indicator" data-slide-index="3"></button>
+            </div>
+
+        </main>
+
+
+        <main class="cards-section">
+            <div class="wrapper">
+                <div class="popular-text">This Week Trending Movies</div>
+            </div>
+            <div id="popular-movies" class="wrapper card-wrapper">
+                <!-- Cards are inserted here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="api-movies.js"></script>
+    <script src="../carousel.js"></script>
+</body>
+</html>

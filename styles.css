@@ -375,7 +375,7 @@ input:focus::placeholder {
 
 .icon{
     position: relative;
-    z-index: 2;
+    z-index: 4;
     height: 40px;
     width: 40px;
 }    

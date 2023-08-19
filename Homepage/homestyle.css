@@ -75,7 +75,7 @@ body {
 
 .text-tagline{
     display: flex;
-    margin-left: 370px;
+    margin-left: 385px;
     font-family: Graphik;
     font-size: 40px;
     font-style: normal;
@@ -129,4 +129,11 @@ body {
     gap: 20px;
     justify-content: space-between;
     align-items: center;
+}
+
+.buttons{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-102%, -190%);
 }
