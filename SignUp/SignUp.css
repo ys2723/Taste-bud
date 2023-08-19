@@ -71,7 +71,19 @@ h1 {
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
+  .or {
+    text-align: center;
+    margin: 20px 0; /* Add vertical spacing around the OR text */
+  }
   
+  .social-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Add spacing between the buttons and OR text */
+  }
+
   /* Responsive styling */
   @media screen and (max-width: 600px) {
     #login-box {
