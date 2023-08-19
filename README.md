@@ -9,7 +9,7 @@ Project made as a part of Quantathon 1.0 Hackathon.
 <tr align="center">
   
 <td>
-**Het Gajera**
+Het Gajera
 
 <p align="center">
 <img src = "https://avatars.githubusercontent.com/u/103428174?v=4"  height="120" alt="Het Gajera">
@@ -23,7 +23,7 @@ Project made as a part of Quantathon 1.0 Hackathon.
 </td>
 
 <td>
-**Neil Nair**
+Neil Nair
 
 <p align="center">
 <img src = "https://avatars.githubusercontent.com/u/95778971?v=4"  height="120" alt="Neil Nair">
@@ -37,7 +37,7 @@ Project made as a part of Quantathon 1.0 Hackathon.
 </td>
 
 <td>
-**Pallav Raj**
+Pallav Raj
 
 <p align="center">
 <img src = "https://avatars.githubusercontent.com/u/103437428?v=4"  height="120" alt="Pallav Raj">
@@ -51,7 +51,7 @@ Project made as a part of Quantathon 1.0 Hackathon.
 </td>
 
 <td>
-**Yash Tripathi**
+Yash Tripathi
 
 <p align="center">
 <img src = "https://avatars.githubusercontent.com/u/103556790?v=4"  height="120" alt="Yash Tripathi">
