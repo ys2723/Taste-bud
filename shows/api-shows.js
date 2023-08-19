@@ -5,14 +5,6 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/tv?' + API_KEY; // Changed to TV shows
 
 
-
-// Fetch data from the API for TV shows
-// const image1 = document.querySelector('.image-1');
-// const image2 = document.querySelector('.image-2');
-// const image3 = document.querySelector('.image-3');
-// const image4 = document.querySelector('.image-4');
-
-
 //Dynamically generating the amount of cards based on the screen width
 const popularShowsSection = document.getElementById('popular-Shows');
 let width = popularShowsSection.getBoundingClientRect().width;
@@ -172,43 +164,3 @@ fetch(API_URL)
   .catch(error => console.error('Error fetching data:', error));
 
 
-
-//   backdrop_path
-// : 
-// "/oOce9hLMVFubjAJliau4kiSNPnW.jpg"
-// first_air_date
-// : 
-// "1990-09-13"
-// genre_ids
-// : 
-// (2) [80, 18]
-// id
-// : 
-// 549
-// name
-// : 
-// "Law & Order"
-// origin_country
-// : 
-// ['US']
-// original_language
-// : 
-// "en"
-// original_name
-// : 
-// "Law & Order"
-// overview
-// : 
-// "In cases ripped from the headlines, police investigate serious and often deadly crimes, weighing the evidence and questioning the suspects until someone is taken into custody. The district attorney's office then builds a case to convict the perpetrator by proving the person guilty beyond a reasonable doubt. Working together, these expert teams navigate all sides of the complex criminal justice system to make New York a safer place."
-// popularity
-// : 
-// 3687.906
-// poster_path
-// : 
-// "/77OPlbsvX3pzoFbyfpcE3GXMCod.jpg"
-// vote_average
-// : 
-// 7.6
-// vote_count
-// : 
-// 434
