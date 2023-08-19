@@ -1,13 +1,3 @@
-<<<<<<< Updated upstream
-.login-box{
-    border: 5px;
-    background-color: aquamarine;
-
-    position: absolute;
-    left: 50%;
-    transform: translate(50%, 50%);
-}
-=======
 * {
     margin: 0;
     padding: 0;
@@ -88,4 +78,3 @@ h1 {
       width: 80%;
     }
   }
->>>>>>> Stashed changes
