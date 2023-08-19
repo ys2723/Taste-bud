@@ -175,18 +175,18 @@ header{
 }
 
 
-.movie-name{
+.movie-name, .tv-name{
     font-size: 3rem;
     max-width: 60ch;
     font-weight: bold;
 }
 
-.movie-rating{
+.movie-rating, .tv-rating{
     font-size: 1.3rem;
     max-width: 60ch;
 }
 
-.movie-desc{
+.movie-desc, .tv-desc{
     font-size: 1.1rem;
     max-width: 60ch;
     overflow: hidden;
