@@ -1,5 +1,5 @@
 # TasteBud 
-A website which recommends movies, shows, music as well as anime according to a person's taste. 
+This project is a comprehensive recommendation system designed to curate personalized entertainment suggestions across various categories including movies, TV shows, music, and anime.
 
 Project made as a part of Quantathon 1.0 Hackathon. 
 
